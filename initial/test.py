@@ -1,5 +1,10 @@
 import time
 import socket
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'sort_1'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'sort_2'))
+BASE_DIR = os.path.dirname(__file__)
 from datetime import datetime
 from sort_2 import sort_2
 from sort_1 import sort_1
@@ -18,7 +23,7 @@ def test_sort(sort_function, data):
 # Main function
 if __name__ == "__main__":
     # Generate a random list of numbers for testing
-    with open('random.txt', 'r') as file:
+    with open(os.path.join(BASE_DIR, 'random.txt'), 'r') as file:
         # Read the lines from the file and convert them to integers
         data = [int(line.strip()) for line in file]
 
@@ -34,7 +39,7 @@ if __name__ == "__main__":
     quick_sort_time = test_sort(sort_2, data)
     
     # Append results to 'results.txt'
-    with open("results.txt", "a+") as file:
+    with open(os.path.join(BASE_DIR, 'results.txt'), "a+") as file:
         file.write(f"Computer Name: {computer_name}\n")
         file.write(f"Date of Test: {current_date}\n")
         file.write(f"Bubble Sort Time: {bubble_sort_time:.6f} seconds\n")

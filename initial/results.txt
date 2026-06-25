@@ -1,0 +1,5 @@
+Computer Name: XPS15-AR-W11
+Date of Test: 2026-06-25 11:18:43
+Bubble Sort Time: 5.269937 seconds
+Quick Sort Time: 0.017879 seconds
+
